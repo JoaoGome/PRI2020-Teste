@@ -1,0 +1,93 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h3 Pagina de Classe
+
+    
+    p Codigo: #{data.codigo}
+    p Nivel: #{data.nivel}
+    p Descrição: #{data.descricao}
+    
+    header.w3-container.w3-teal
+      h3 Informação de filhos
+    if (data.nivel == 3)
+
+        if (data.filhos.length > 0)    
+
+            .w3-container
+                table(class="w3-table-all")
+                    tr
+                        th Filho
+                        th Titulo
+                        th Processos Relacionados
+                        th Tipo de Relação
+
+                    each p in data.filhos
+                        tr
+                            td
+                                a(href=`http://localhost:8001/classes/${p.codigo}?prev=${data.codigo}`) #{p.codigo}
+                            td= p.titulo
+
+        h3 Informação de processos relacionados 
+        
+        
+        .w3-container
+            table(class="w3-table-all")
+                tr
+                    th Processo
+                    th Titulo
+                    th Relação
+
+                each p in data.processosRelacionados
+                    if (p.idRel == "eCruzadoCom")
+                        tr
+                            td
+                                a(href=`http://localhost:8001/classes/${p.codigo}?prev=${data.codigo}`) #{p.codigo}
+                            td= p.titulo
+                            td= p.idRel
+                    else if(p.idRel == "eComplementarDe")
+                        tr
+                            td
+                                a(href=`http://localhost:8001/classes/${p.codigo}?prev=${data.codigo}`) #{p.codigo}
+                            td= p.titulo
+                            td= p.idRel
+                    else if(p.idRel == "eSuplementoDe")
+                        tr
+                            td 
+                                a(href=`http://localhost:8001/classes/${p.codigo}?prev=${data.codigo}`) #{p.codigo}
+                            td= p.titulo
+                            td= p.idRel
+                    else if(p.idRel == "eSuplementoPara")
+                        tr
+                            td 
+                                a(href=`http://localhost:8001/classes/${p.codigo}?prev=${data.codigo}`) #{p.codigo}
+                            td= p.titulo
+                            td= p.idRel
+                        
+    else 
+         if (data.filhos.length > 0)    
+
+            .w3-container
+                table(class="w3-table-all")
+                    tr
+                        th Filho
+                        th Titulo
+                        
+                    each p in data.filhos
+                        tr
+                            td
+                                a(href=`http://localhost:8001/classes/${p.codigo}?prev=${data.codigo}`) #{p.codigo}
+                            td= p.titulo
+                                        
+
+    if (previous)
+        p
+            a(href=`http://localhost:8001/classes/${previous}`) Voltar à Pagina Anterior
+            
+    p
+        a(href=`http://localhost:8001/`) Voltar à Pagina Inicial
+    
+    footer(class="w3-container w3-teal")
+                address Gerado por galuno :: 2020-Novembro, jcr

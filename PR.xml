@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "../../PRexemplo.dtd">
+<pr>
+    <meta>
+        <key>PRI2020-Teste</key>
+        <title>Teste</title>
+        <subtitle></subtitle>
+        <bdate>18/01/2020</bdate>
+        <edate>18/01/2020</edate>
+        <supervisor>José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker number="A82238">
+            <name>João Pedro Rodrigues Gomes</name>
+            <email>a82238@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <p>Para o primeiro exercício, a persistência de dados foi feito no mongoDB. Através do comando mongoimport importou-se o json para a base de dados. Foi criado um controlador e um modelo para interagir com a base de dados.</p>
+        <p>Foram criadas várias funções para interagir com a base de dados: listar, consultar, consultarNome, consultarAno, consultarByAno</p>
+        <p>Respostas textuais/p>
+        <p>Pergunta1 tem resposta de 3, obtida com o comando http://clav-api.di.uminho.pt/v2/classes/c750/descendencia?token=</p>
+        <p>Pergunta2 tem resposta de 116 obtida com o comando http://clav-api.di.uminho.pt/v2/classes?nivel=4&token=</p>
+        <p>Pergunta3 tem resposta de 5  obtida com o comando http://clav-api.di.uminho.pt/v2/classes/c750.30/descendencia?token=</p>
+        <p>Pergunta4 tem resposta de 6 obtida com o comando http://clav-api.di.uminho.pt/v2/classes/c750.30.001/procRel?token=</p>
+        <p> A aplicação é usada correndo http://localhost:8001/</p>
+    </abstract>
+    <deliverables>
+        <link url="./server.js"></link>
+        <link url="./dbFiles.json">Ficheiro com informações dos alunos...</link>
+    </deliverables>
+</pr>
